@@ -1,6 +1,5 @@
 import React from 'react'
 import Layout from '../components/layout'
-
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
@@ -21,6 +20,7 @@ class IndexPage extends React.Component {
     this.handleClickOutside = this.handleClickOutside.bind(this);
   }
 
+  //on a component mounting assign a timeoutId to a setTimeout ID to 'this' and add that event listener to close a page
   componentDidMount () {
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
@@ -28,6 +28,7 @@ class IndexPage extends React.Component {
     document.addEventListener('mousedown', this.handleClickOutside);
   }
 
+  //on the unmount if that timeout ID still exists remove it and remove that event listener
   componentWillUnmount () {
     if (this.timeoutId) {
         clearTimeout(this.timeoutId);
