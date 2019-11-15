@@ -23,7 +23,7 @@ class Main extends React.Component {
       >
         
         <Info article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}></Info>
-        <Demo article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}></Demo>
+        <Demo article={this.props.article} articleTimeout={this.props.articleTimeout} close={close} handleSelectQuery={this.props.handleSelectQuery} select1={this.props.select1} select2={this.props.select2} select3={this.props.select3} query={this.props.query} handleFetch={this.props.handleFetch} responses={this.props.responses}></Demo>
         <Team article={this.props.article} articleTimeout={this.props.articleTimeout} close={close}></Team>
 
         

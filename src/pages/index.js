@@ -12,12 +12,19 @@ class IndexPage extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading'
+      loading: 'is-loading',
+      select1: '',
+      select2: '',
+      select3: '',
+      query: 'build query',
+      responses: []
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
     this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleSelectQuery = this.handleSelectQuery.bind(this)
+    this.handleFetch = this.handleFetch.bind(this)
   }
 
   //on a component mounting assign a timeoutId to a setTimeout ID to 'this' and add that event listener to close a page
@@ -90,6 +97,63 @@ class IndexPage extends React.Component {
     }
   }
 
+  handleSelectQuery (event) {
+    let targetBox = event.target.id
+    let obj = {}
+    let select1 = targetBox === 'select1' ? event.target.value : this.state.select1
+    let select2 = targetBox === 'select2' ? event.target.value : this.state.select2
+    let select3 = targetBox === 'select3' ? event.target.value : this.state.select3
+
+    obj[targetBox] = event.target.value
+
+    obj.query = `{
+      reddit {
+         subreddit(name: "${select1}"){
+           newListings(limit: 2) {
+             title
+             comments {
+               body
+             }
+           }
+         }
+          user (username: "${select2}"){
+              ${select3}
+         }
+       }
+     }` 
+    this.setState(obj)
+  }
+
+  handleFetch(query) {
+    query = `query {
+      artist(id: "mark-rothko") {
+        name
+        image {
+          id
+        }
+        artworks (size: 2) {
+          id
+          imageUrl
+        }
+      }
+    }`
+    fetch('https://metaphysics-production.artsy.net',
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({query: query})
+    })
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        responses: [...this.state.responses, res]
+      })
+    })
+    .then(console.log(this.state))
+  }
+
   render() {
     return (
       <Layout location={this.props.location}>
@@ -103,6 +167,10 @@ class IndexPage extends React.Component {
               article={this.state.article}
               onCloseArticle={this.handleCloseArticle}
               setWrapperRef={this.setWrapperRef}
+              handleSelectQuery={this.handleSelectQuery}
+              query={this.state.query}
+              handleFetch={this.handleFetch}
+              responses={this.state.responses}
             />
             <Footer timeout={this.state.timeout} />
           </div>

@@ -22,7 +22,8 @@
 		display: inline-block;
 		font-size: 0.8rem;
 		font-weight: _font(weight);
-		height: _size(element-height);
+		// height: _size(element-height);
+		height: auto;
 		letter-spacing: _font(letter-spacing);
 		line-height: _size(element-height);
 		outline: 0;
@@ -30,7 +31,7 @@
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		white-space: nowrap;
+		// white-space: nowrap;
 
 		&:hover {
 			background-color: _palette(border-bg);
