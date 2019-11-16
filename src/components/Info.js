@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import pic01 from '../images/pic01.jpg'
+import maps from '../images/maps.jpg'
 
 
 const Info = (props) => (
@@ -13,27 +13,33 @@ const Info = (props) => (
         >
           <h2 className="major">Info</h2>
           <span className="image main">
-            <img src={pic01} alt="" />
+            <img src={maps} alt="" />
           </span>
           <p>
-            Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-            aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-            convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-            magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
+            TrunQ has been designed to give you the most flexible out-of-the-box caching solution
+            for 3rd party APIs and remote servers. Employing both a browser-side & client-side cache 
+            TrunQ gives you the option to decide what is most important to your application.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-            dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-            torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-            libero eu nibh porttitor fermentum. Nullam venenatis erat id
-            vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-            Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-            dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-            lectus. Pellentesque habitant morbi tristique senectus et netus et
-            malesuada fames ac turpis egestas. In non lorem sit amet elit
-            placerat maximus. Pellentesque aliquam maximus risus, vel sed
-            vehicula.
+            The easily installable npm package offers plenty of benefits to play around with as a developer including:
+            <ul>
+            <br/>
+
+              <li>Session storage in browser for lightning fast cached responses</li>
+              <li>Easily configurable Redis database with little setup for speedy server-side caching</li>
+              <li>Unique Key generation for GraphQL responses to solve developer cache tagging</li>
+              <li>Partial and Exact matching for query fields in the developer's GraphQL API</li>
+              <li>Compressed queries based on cache results to minimize server and data loads</li>
+              <li>Ability to handle and seperate, multiple parent queries inside one large request</li>
+              <li>Toggle feature to specify exact caching locations</li>
+              
+            </ul>
+            All of this, done with one simple invocation on the client side and simple plug and play middleware in the server.
+          </p>
+          <p>
+            On the Demo tab you'll be able to see all of this in action. Feel free to check out our <a href='https://github.com/oslabs-beta/trunQ'>GitHub</a> 
+            or <a href='https://www.npmjs.com/package/trunq'>NPM package</a> for more in-depth information. Or shoot any of us an email on the Team tab and
+            we would be happy to talk with you.
           </p>
           {props.close}
         </article>
