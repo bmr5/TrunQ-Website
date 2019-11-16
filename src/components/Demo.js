@@ -6,7 +6,7 @@ class Demo extends React.Component {
     render () {
 
         let arr = this.props.responses
-        let testArr = arr.map(x => x=<DemoCard />)
+        let testArr = arr.map( (x, i) => x=<DemoCard key={`card${i}`} />)
 
         return (
             <article
