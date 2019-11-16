@@ -106,21 +106,23 @@ class IndexPage extends React.Component {
 
     obj[targetBox] = event.target.value
 
-    obj.query = `{
-      reddit {
-         subreddit(name: "${select1}"){
-           newListings(limit: 2) {
-             title
-             comments {
-               body
-             }
-           }
-         }
-          user (username: "${select2}"){
-              ${select3}
-         }
-       }
-     }` 
+    obj.query = <pre >
+{`{ 
+  reddit {
+    subreddit(name: "${select1}"){
+      newListings(limit: 2) {
+        title
+          comments {
+            body
+          }
+      }
+    }
+    user (username: "${select2}"){
+        ${select3}
+    }
+  }
+}`}
+    </pre>
     this.setState(obj)
   }
 
@@ -155,6 +157,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
+
     return (
       <Layout location={this.props.location}>
         <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
@@ -176,6 +179,7 @@ class IndexPage extends React.Component {
           </div>
           <div id="bg"></div>
         </div>
+        
       </Layout>
     )
   }
