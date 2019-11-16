@@ -13,9 +13,9 @@ class IndexPage extends React.Component {
       articleTimeout: false,
       article: '',
       loading: 'is-loading',
-      select1: '',
-      select2: '',
-      select3: '',
+      select1: '-------',
+      select2: '-------',
+      select3: '-------',
       query: 'build query',
       responses: []
     }
@@ -83,7 +83,12 @@ class IndexPage extends React.Component {
     setTimeout(() => {
       this.setState({
         isArticleVisible: !this.state.isArticleVisible,
-        article: ''
+        article: '',
+        select1: '',
+        select2: '',
+        select3: '',
+        query: 'build query',
+        responses: []
       })
     }, 350)
 

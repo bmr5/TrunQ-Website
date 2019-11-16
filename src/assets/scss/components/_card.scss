@@ -1,0 +1,34 @@
+
+.card {
+    @include vendor('appearance', 'none');
+    @include vendor('transition', 'background-color #{_duration(transition)} ease-in-out, color #{_duration(transition)} ease-in-out');
+    background-color: transparent;
+    border-radius: _size(border-radius);
+    border: 0;
+    box-shadow: inset 0 0 0 _size(border-width) _palette(border);
+    color: _palette(fg-bold) !important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: _font(weight);
+    height: 5rem;
+    width: 100%;
+    letter-spacing: _font(letter-spacing);
+    // line-height: _size(element-height);
+    outline: 0;
+    padding: 0 1.25rem 0 (1.25rem + (_font(letter-spacing) * 0.5));
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    // white-space: nowrap;
+    justify-self: center;
+
+
+    &:hover {
+        background-color: _palette(border-bg);
+    }
+
+    &:active {
+        background-color: _palette(border-bg-alt);
+    }
+}

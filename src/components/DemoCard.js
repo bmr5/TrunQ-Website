@@ -3,7 +3,7 @@ import React from 'react'
 const DemoCard = props => {
     
     return (
-        <div className="demoCard">
+        <div className="card">
             <h2>test card</h2>
         </div>
     )

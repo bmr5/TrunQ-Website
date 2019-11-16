@@ -37,8 +37,8 @@ const Info = (props) => (
             All of this, done with one simple invocation on the client side and simple plug and play middleware on your server.
           </p>
           <p>
-            On the Demo tab you'll be able to see all of this in action. Feel free to check out our <a href='https://github.com/oslabs-beta/trunQ'>GitHub</a> 
-            or <a href='https://www.npmjs.com/package/trunq'>NPM package</a> for more in-depth information. Or shoot any of us an email on the Team tab and
+            On the Demo tab you'll be able to see all of this in action. Feel free to check out our <a href='https://github.com/oslabs-beta/trunQ'>GitHub</a> or <a href='https://www.npmjs.com/package/trunq'>NPM package</a> for 
+            more in-depth information. Or shoot any of us an email on the Team tab and
             we would be happy to talk with you.
           </p>
           {props.close}

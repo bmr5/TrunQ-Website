@@ -113,10 +113,17 @@
 	}
 
 	.query-input{
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
+		// display: flex;
+		// flex-direction: row;
+		// justify-content: space-evenly;
+		margin-bottom: 1rem;
+		width:100%;
 		// border: solid blue 2px;
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: 25% 25% 25%;
+		grid-gap: 8%;
+		justify-content: center;
 
 		&.query-box {
 			@include vendor('appearance', 'none');
@@ -130,17 +137,16 @@
 			display: inline-block;
 			font-size: 0.8rem;
 			font-weight: _font(weight);
-			// height: _size(element-height);
-			height: 25%;
-			width: 25%;
+			height: 1.6rem;
+			width: 100%;
 			letter-spacing: _font(letter-spacing);
-			// line-height: _size(element-height);
 			outline: 0;
 			padding: 0 1.25rem 0 (1.25rem + (_font(letter-spacing) * 0.5));
 			text-align: center;
 			text-decoration: none;
 			text-transform: uppercase;
 			white-space: nowrap;
+			justify-self: center;
 
 			&:hover {
 				background-color: _palette(border-bg);
@@ -151,3 +157,5 @@
 			}
 		}
 	}
+
+	

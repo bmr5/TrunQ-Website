@@ -6,7 +6,10 @@ class Demo extends React.Component {
     render () {
 
         let arr = this.props.responses
-        let testArr = arr.map( (x, i) => x=<DemoCard key={`card${i}`} />)
+        let testArr = arr.map( (x, i) => {
+            console.log(x)
+            return <DemoCard key={`card${i}`} />   
+        })
 
         return (
             <article
@@ -50,11 +53,12 @@ class Demo extends React.Component {
                         <option value="audi">Audi</option>
                     </select>
 
+                    {testArr}
                 </div>
 
                 {/* a 'box' of responses here with the correct time and everything */}
-                <div className='query-results'>
-                    {testArr}
+                <div className='main query-results'>
+                    
                 </div>
                 
                 
