@@ -34,7 +34,7 @@ const Info = (props) => (
               <li>Toggle feature to specify exact caching locations</li>
               
             </ul>
-            All of this, done with one simple invocation on the client side and simple plug and play middleware in the server.
+            All of this, done with one simple invocation on the client side and simple plug and play middleware on your server.
           </p>
           <p>
             On the Demo tab you'll be able to see all of this in action. Feel free to check out our <a href='https://github.com/oslabs-beta/trunQ'>GitHub</a> 

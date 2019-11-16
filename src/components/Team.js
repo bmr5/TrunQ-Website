@@ -22,7 +22,7 @@ const Team = (props) => (
 
           <span className="portrait main">
             <div className="portrait bioright">
-              <p className="portrait bioText">test test</p>
+              <p className="portrait bioText">Ben test</p>
             </div>
             <img src={pic02} alt="" />
           </span>
