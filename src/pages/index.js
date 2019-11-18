@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+import trunq from 'trunq'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -112,11 +113,11 @@ class IndexPage extends React.Component {
     obj[targetBox] = event.target.value
 
     obj.query = <pre >
-{`{
+{`query {
   artist(id: "${select1}") {
     name
-    hometown
-    artworks(size: ${select2} sort: ${select3}) {
+    ${select2}
+    artworks(size: ${select3}) {
       id
       is_acquireable
     }
@@ -127,23 +128,26 @@ class IndexPage extends React.Component {
     this.setState(obj)
   }
 
-  handleFetch(query) {
+  async handleFetch(query) {
     query = document.querySelector('pre').innerHTML
-    fetch('https://metaphysics-production.artsy.net',
-    {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({query: query})
-    })
-    .then(res => res.json())
-    .then(res => {
-      this.setState({
-        responses: [...this.state.responses, res]
-      })
-    })
-    .then(console.log(this.state))
+    let url = 'https://4lty9lrr06.execute-api.us-east-2.amazonaws.com/trunq/graphql'
+    const results = await trunq.trunQify(query, ['id'], url, 'client')
+    console.log('done, should error', results)
+    // fetch('https://metaphysics-production.artsy.net',
+    // {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({query: query})
+    // })
+    // .then(res => res.json())
+    // .then(res => {
+    //    this.setState({
+    //     responses: [...this.state.responses, res]
+    //   })
+    // })
+    // .then(console.log('state', this.state))
   }
 
   render() {

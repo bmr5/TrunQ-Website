@@ -38,16 +38,16 @@ class Demo extends React.Component {
                     </select>
 
                     <select className ='query-input query-box' id="select2" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Size</option>
-                        <option value="2">2</option>
+                        <option default>Info</option>
+                        <option value="hometown">Hometown</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
                     </select>
 
                     <select className ='query-input query-box' id="select3" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Sort</option>
-                        <option value="TITLE_DESC">Title Desc</option>
+                        <option default>Size</option>
+                        <option value="2">2</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
