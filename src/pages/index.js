@@ -112,38 +112,23 @@ class IndexPage extends React.Component {
     obj[targetBox] = event.target.value
 
     obj.query = <pre >
-{`{ 
-  reddit {
-    subreddit(name: "${select1}"){
-      newListings(limit: 2) {
-        title
-          comments {
-            body
-          }
-      }
-    }
-    user (username: "${select2}"){
-        ${select3}
+{`{
+  artist(id: "${select1}") {
+    name
+    hometown
+    artworks(size: ${select2} sort: ${select3}) {
+      id
+      is_acquireable
     }
   }
-}`}
+}
+`}
     </pre>
     this.setState(obj)
   }
 
   handleFetch(query) {
-    query = `query {
-      artist(id: "mark-rothko") {
-        name
-        image {
-          id
-        }
-        artworks (size: 2) {
-          id
-          imageUrl
-        }
-      }
-    }`
+    query = document.querySelector('pre').innerHTML
     fetch('https://metaphysics-production.artsy.net',
     {
         method: 'POST',

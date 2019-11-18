@@ -30,24 +30,24 @@ class Demo extends React.Component {
                 {/* put the input sections for the graphQL query here - 3 of them */}
                 <div className='main query-input'>
                     <select className ='query-input query-box' id="select1" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Subreddit</option>
-                        <option value="movies">movies</option>
+                        <option default>Artist</option>
+                        <option value="mark-rothko">Mark Rothko</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
                     </select>
 
                     <select className ='query-input query-box' id="select2" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Username</option>
-                        <option value="btcIII">btcIII</option>
+                        <option default>Size</option>
+                        <option value="2">2</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
                     </select>
 
                     <select className ='query-input query-box' id="select3" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Karma</option>
-                        <option value="commentKarma">commentKarma</option>
+                        <option default>Sort</option>
+                        <option value="TITLE_DESC">Title Desc</option>
                         <option value="saab">Saab</option>
                         <option value="mercedes">Mercedes</option>
                         <option value="audi">Audi</option>
