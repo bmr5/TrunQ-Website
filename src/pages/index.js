@@ -23,14 +23,14 @@ class IndexPage extends React.Component {
     name
     hometown
     artworks(size: 2) {
-      id
-      is_acquireable
+      imageUrl
     }
   }
 }
 `}
       </pre>,
-      responses: []
+      responses: [],
+      times: []
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -112,8 +112,7 @@ class IndexPage extends React.Component {
     name
     hometown
     artworks(size: 2) {
-      id
-      is_acquireable
+      imageUrl
     }
   }
 }
@@ -148,8 +147,7 @@ class IndexPage extends React.Component {
     name
     ${select2}
     artworks(size: ${select3}) {
-      id
-      is_acquireable
+      imageUrl
     }
   }
 }
@@ -164,11 +162,13 @@ class IndexPage extends React.Component {
 
     query = document.querySelector('pre').innerHTML
     let url = 'https://4lty9lrr06.execute-api.us-east-2.amazonaws.com/trunq/graphql'
+    let startTime = Date.now()
     const results = await trunq.trunQify(query, ['id'], url, 'client')
+    let elapsedTime = Date.now() - startTime
     this.setState({
-      responses: [...this.state.responses, results]
+      responses: [...this.state.responses, ...results],
+      times: [...this.state.times, elapsedTime]
     })
-    console.log('state', this.state)
   }
 
   render() {
@@ -189,6 +189,7 @@ class IndexPage extends React.Component {
               query={this.state.query}
               handleFetch={this.handleFetch}
               responses={this.state.responses}
+              times={this.state.times}
             />
             <Footer timeout={this.state.timeout} />
           </div>

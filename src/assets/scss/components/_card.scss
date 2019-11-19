@@ -9,9 +9,9 @@
     color: _palette(fg-bold) !important;
     cursor: pointer;
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
     font-weight: _font(weight);
-    height: 5rem;
+    height: 100%;
     width: 100%;
     letter-spacing: _font(letter-spacing);
     // line-height: _size(element-height);
@@ -31,4 +31,8 @@
     &:active {
         background-color: _palette(border-bg-alt);
     }
+}
+
+.info{
+    margin: 0;
 }

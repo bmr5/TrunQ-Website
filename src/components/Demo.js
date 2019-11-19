@@ -4,10 +4,10 @@ import DemoCard from './DemoCard.js'
 
 class Demo extends React.Component {
     render () {
-
-        let arr = this.props.responses
-        let testArr = arr.map( (x, i) => {
-            return <DemoCard key={`card${i}`} />   
+        console.log(this.props.times)
+        let responses = this.props.responses
+        let cardArr = responses.map( (x, i) => {
+            return <DemoCard key={`card${i}`} artist={x.data.artist} time={this.props.times[i]}/>   
         })
 
         return (
@@ -41,7 +41,7 @@ class Demo extends React.Component {
                         <option value="years">Years</option>
                         <option value="birthday">Birthday</option>
                         <option value="nationality">Nationality</option>
-                        <option value="hometown years birthday nationality">All of the Above</option>
+                        <option value="hometown years birthday nationality">All Info</option>
                     </select>
 
                     <select className ='query-input query-box' id="select3" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
@@ -50,7 +50,7 @@ class Demo extends React.Component {
                         <option value="4">4 Paintings</option>
                     </select>
 
-                    {testArr}
+                    {cardArr}
                 </div>
 
                 {/* a 'box' of responses here with the correct time and everything */}
