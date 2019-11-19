@@ -11,6 +11,8 @@
     border: 0;
     display: inline-block;
     position: relative;
+    padding: .4em .4em;
+
 
     &:before {
         @include vendor('pointer-events', 'none');
@@ -27,11 +29,6 @@
         width: 100%;
     }
 
-    img {
-        border-radius: _size(border-radius);
-        display: block;
-    }
-
     &.left,
     &.right {
         max-width: 40%;
@@ -43,8 +40,6 @@
 
     &.left {
         float: left;
-        padding: 0 1.5em 1em 0;
-        top: 0.25em;
     }
 
     &.right {
@@ -59,12 +54,14 @@
         width: 100%;
 
         img {
+            height: 100%;
             width: 100%;
+            
         }
     }
 
     &.main {
-        display: flex;
+        // display: flex;
         margin: (_size(element-margin) * 1.25) 0;
         width: 100%;
 
@@ -85,30 +82,33 @@
         }
     }
     &.bioleft {
-        display: flex;
         width:100%;
 
         img {
-            border:solid;
+            float: left;
+            margin-right: 1em;
         }
-    }
-
-    &.bioright {
-        display: flex;
-        width:100%;
-
-        img {
-            border:solid;
-            justify-self: flex-end;
-        }
-    }
-
-    &.bioText {
-        margin: 5%;
-
         &:before {
             color: lightgrey;   
             background-color: rgba(0, 0, 0, 0) !important;
         }
     }
+
+    &.bioright {
+        width:100%;
+        text-align: left;
+
+        img {
+            float: right;
+        }
+        &:before {
+            color: lightgrey;   
+            background-color: rgba(0, 0, 0, 0) !important;
+        }
+    }
+
+    .links{
+        text-align: center;
+    }
+
 }

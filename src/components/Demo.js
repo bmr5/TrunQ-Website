@@ -45,7 +45,6 @@ class Demo extends React.Component {
 
                     <select className ='query-input query-box' id="select3" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
                         <option default value="2">2 Paintings</option>
-                        <option value="3">3 Paintings</option>
                         <option value="4">4 Paintings</option>
                     </select>
 
@@ -55,6 +54,8 @@ class Demo extends React.Component {
                         <option value="both">Cache in Both</option>
                     </select>
 
+                </div>
+                <div className ='card-box' >
                     {cardArr}
                 </div>
 

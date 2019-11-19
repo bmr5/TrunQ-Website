@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import maps from '../images/maps.jpg'
 
 
@@ -22,6 +21,7 @@ const Info = (props) => (
           </p>
           <p>
             The easily installable npm package offers plenty of benefits to play around with as a developer including:
+          </p>  
             <ul>
             <br/>
 
@@ -34,6 +34,7 @@ const Info = (props) => (
               <li>Toggle feature to specify exact caching locations</li>
               
             </ul>
+          <p>
             All of this, done with one simple invocation on the client side and simple plug and play middleware on your server.
           </p>
           <p>
@@ -45,8 +46,5 @@ const Info = (props) => (
         </article>
 )
 
-Info.propTypes = {
-
-}
 
 export default Info

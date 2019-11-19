@@ -120,7 +120,8 @@ class IndexPage extends React.Component {
 `}
 </pre>,
         responses: [],
-        cacheLocation: 'client'
+        cacheLocation: 'client',
+        times: []
       })
     }, 350)
   }
