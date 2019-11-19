@@ -4,7 +4,6 @@ import DemoCard from './DemoCard.js'
 
 class Demo extends React.Component {
     render () {
-        console.log(this.props.times)
         let responses = this.props.responses
         let cardArr = responses.map( (x, i) => {
             return <DemoCard key={`card${i}`} artist={x.data.artist} time={this.props.times[i]}/>   
@@ -48,6 +47,12 @@ class Demo extends React.Component {
                         <option default value="2">2 Paintings</option>
                         <option value="3">3 Paintings</option>
                         <option value="4">4 Paintings</option>
+                    </select>
+
+                    <select className ='query-input query-box' id="select4" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
+                        <option default value="client">Client Caching</option>
+                        <option value="server">Server Caching</option>
+                        <option value="both">Cache in Both</option>
                     </select>
 
                     {cardArr}

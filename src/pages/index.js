@@ -30,7 +30,8 @@ class IndexPage extends React.Component {
 `}
       </pre>,
       responses: [],
-      times: []
+      times: [],
+      cacheLocation: 'client'
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -118,10 +119,10 @@ class IndexPage extends React.Component {
 }
 `}
 </pre>,
-        responses: []
+        responses: [],
+        cacheLocation: 'client'
       })
     }, 350)
-
   }
 
   handleClickOutside(event) {
@@ -138,9 +139,9 @@ class IndexPage extends React.Component {
     let select1 = targetBox === 'select1' ? event.target.value : this.state.select1
     let select2 = targetBox === 'select2' ? event.target.value : this.state.select2
     let select3 = targetBox === 'select3' ? event.target.value : this.state.select3
-
+    let cacheLocation = targetBox === 'select4' ? event.target.value : this.state.select4
     obj[targetBox] = event.target.value
-
+    obj.cacheLocation = cacheLocation
     obj.query = <pre >
 {`query {
   artist(id: "${select1}") {
@@ -156,14 +157,12 @@ class IndexPage extends React.Component {
     this.setState(obj)
   }
 
-  async handleFetch(query) {
-    console.log('right before trunqify')
-    
+  async handleFetch(query) {  
 
     query = document.querySelector('pre').innerHTML
     let url = 'https://4lty9lrr06.execute-api.us-east-2.amazonaws.com/trunq/graphql'
     let startTime = Date.now()
-    const results = await trunq.trunQify(query, ['id'], url, 'client')
+    const results = await trunq.trunQify(query, ['id'], url, this.state.cacheLocation)
     let elapsedTime = Date.now() - startTime
     this.setState({
       responses: [...this.state.responses, ...results],
