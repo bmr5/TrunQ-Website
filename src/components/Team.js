@@ -21,7 +21,7 @@ const Team = (props) => (
               Ben Ray is a full-stack software engineer passionate about building performant React applications 
               people love to use. Prior to TrunQ, Ben was a CPA at Ernst & Young and now uses that analytical 
               training to architect complex full-stack applications. He loves to talk about front-end optimization 
-              and the importance of the user experience and dogs. 
+              and the importance of the user experience. 
               <br/>
               <br/>
               <div className='links'>
