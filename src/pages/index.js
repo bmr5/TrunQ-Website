@@ -167,7 +167,7 @@ class IndexPage extends React.Component {
     query = document.querySelector('pre').innerHTML
     let url = 'https://4lty9lrr06.execute-api.us-east-2.amazonaws.com/trunq/graphql'
     let startTime = Date.now()
-    const results = await trunq.trunQify(query, ['id'], url, this.state.cacheLocation)
+    // const results = await trunq.trunQify(query, ['id'], url, this.state.cacheLocation)
     let elapsedTime = Date.now() - startTime
     this.setState({
       responses: [...this.state.responses, ...results],
