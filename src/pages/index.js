@@ -13,7 +13,7 @@ class IndexPage extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: 'is-loading',
+      loading: '',
       select1: 'mark-rothko',
       select2: 'hometown',
       select3: '2',
@@ -43,6 +43,9 @@ class IndexPage extends React.Component {
 
   //on a component mounting assign a timeoutId to a setTimeout ID to 'this' and add that event listener to close a page
   componentDidMount () {
+    // let test = document.querySelector('.is-loading')
+    // test.classList.add('test')
+    // console.log(test)
     this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
     }, 100);
