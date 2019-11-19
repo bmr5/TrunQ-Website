@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "TrunQ",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Dimension by HTML5 UP"
+    author: "Ben Ray",
+    description: "TrunQ IO Home Website"
   },
   plugins: [
     'gatsby-plugin-react-helmet',

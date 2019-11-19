@@ -7,7 +7,6 @@ class Demo extends React.Component {
 
         let arr = this.props.responses
         let testArr = arr.map( (x, i) => {
-            console.log(x)
             return <DemoCard key={`card${i}`} />   
         })
 
@@ -30,27 +29,25 @@ class Demo extends React.Component {
                 {/* put the input sections for the graphQL query here - 3 of them */}
                 <div className='main query-input'>
                     <select className ='query-input query-box' id="select1" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Artist</option>
-                        <option value="mark-rothko">Mark Rothko</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                        <option default value='mark-rothko'>Mark Rothko</option>
+                        <option value="vincent-van-gogh">Van Gogh</option>
+                        <option value="pablo-picasso">Picasso</option>
+                        <option value="banksy">Banksy</option>
+                        <option value="claude-monet">Monet</option>
                     </select>
 
                     <select className ='query-input query-box' id="select2" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Info</option>
-                        <option value="hometown">Hometown</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                        <option default value="hometown">Hometown</option>
+                        <option value="years">Years</option>
+                        <option value="birthday">Birthday</option>
+                        <option value="nationality">Nationality</option>
+                        <option value="hometown years birthday nationality">All of the Above</option>
                     </select>
 
                     <select className ='query-input query-box' id="select3" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default>Size</option>
-                        <option value="2">2</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
+                        <option default value="2">2 Paintings</option>
+                        <option value="3">3 Paintings</option>
+                        <option value="4">4 Paintings</option>
                     </select>
 
                     {testArr}

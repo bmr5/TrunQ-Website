@@ -14,10 +14,22 @@ class IndexPage extends React.Component {
       articleTimeout: false,
       article: '',
       loading: 'is-loading',
-      select1: '-------',
-      select2: '-------',
-      select3: '-------',
-      query: 'build query',
+      select1: 'mark-rothko',
+      select2: 'hometown',
+      select3: '2',
+      query: <pre >
+{`query {
+  artist(id: "mark-rothko") {
+    name
+    hometown
+    artworks(size: 2) {
+      id
+      is_acquireable
+    }
+  }
+}
+`}
+      </pre>,
       responses: []
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
@@ -82,13 +94,31 @@ class IndexPage extends React.Component {
     }, 325)
 
     setTimeout(() => {
+
+      let dropDowns = document.querySelectorAll('.query-box');
+      for (var i = 0, l = dropDowns.length; i < l; i++) {
+          dropDowns[i].selectedIndex = 0;
+      }
+
       this.setState({
         isArticleVisible: !this.state.isArticleVisible,
         article: '',
-        select1: '',
-        select2: '',
-        select3: '',
-        query: 'build query',
+        select1: 'mark-rothko',
+        select2: 'hometown',
+        select3: '2',
+        query: <pre >
+{`query {
+  artist(id: "mark-rothko") {
+    name
+    hometown
+    artworks(size: 2) {
+      id
+      is_acquireable
+    }
+  }
+}
+`}
+</pre>,
         responses: []
       })
     }, 350)
@@ -129,25 +159,16 @@ class IndexPage extends React.Component {
   }
 
   async handleFetch(query) {
+    console.log('right before trunqify')
+    
+
     query = document.querySelector('pre').innerHTML
     let url = 'https://4lty9lrr06.execute-api.us-east-2.amazonaws.com/trunq/graphql'
     const results = await trunq.trunQify(query, ['id'], url, 'client')
-    console.log('done, should error', results)
-    // fetch('https://metaphysics-production.artsy.net',
-    // {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({query: query})
-    // })
-    // .then(res => res.json())
-    // .then(res => {
-    //    this.setState({
-    //     responses: [...this.state.responses, res]
-    //   })
-    // })
-    // .then(console.log('state', this.state))
+    this.setState({
+      responses: [...this.state.responses, results]
+    })
+    console.log('state', this.state)
   }
 
   render() {
