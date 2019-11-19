@@ -8,8 +8,8 @@ const DemoCard = props => {
     let nationalityPara = nationality ? <p className='info'>Nationality: {nationality}</p> : ''
     let yearsPara = years ? <p className='info'>Years: {years}</p> : ''
     
-    let images = artworks.map(obj => {
-       return <img src={`${obj.imageUrl}`} style={{'height': '40px', 'width': '40px'}}/>
+    let images = artworks.map( (obj, i) => {
+       return <img key ={i} src={`${obj.imageUrl}`} style={{'height': '40px', 'width': '40px'}}/>
     })
 
     return (
