@@ -13,7 +13,7 @@ class IndexPage extends React.Component {
       timeout: false,
       articleTimeout: false,
       article: '',
-      loading: '',
+      loading: 'is-loading',
       select1: 'mark-rothko',
       select2: 'hometown',
       select3: '2',
@@ -45,8 +45,9 @@ class IndexPage extends React.Component {
   componentDidMount () {
     // let test = document.querySelector('.is-loading')
     // test.classList.add('test')
-    // console.log(test)
+    console.log('Mounted')
     this.timeoutId = setTimeout(() => {
+        console.log("Changing State")
         this.setState({loading: ''});
     }, 100);
     document.addEventListener('mousedown', this.handleClickOutside);
@@ -65,7 +66,7 @@ class IndexPage extends React.Component {
   }
 
   handleOpenArticle(article) {
-
+    console.log("HIT HANDLE OPEN")
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
       article
