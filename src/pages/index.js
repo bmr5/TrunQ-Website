@@ -31,7 +31,7 @@ class IndexPage extends React.Component {
       </pre>,
       responses: [],
       times: [],
-      cacheLocation: 'client'
+      cacheLocation: 'server'
     }
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
@@ -45,9 +45,7 @@ class IndexPage extends React.Component {
   componentDidMount () {
     // let test = document.querySelector('.is-loading')
     // test.classList.add('test')
-    console.log('Mounted')
     this.timeoutId = setTimeout(() => {
-        console.log("Changing State")
         this.setState({loading: ''});
     }, 100);
     document.addEventListener('mousedown', this.handleClickOutside);
@@ -66,7 +64,6 @@ class IndexPage extends React.Component {
   }
 
   handleOpenArticle(article) {
-    console.log("HIT HANDLE OPEN")
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
       article

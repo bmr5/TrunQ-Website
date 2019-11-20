@@ -49,8 +49,8 @@ class Demo extends React.Component {
                     </select>
 
                     <select className ='query-input query-box' id="select4" onChange={ (e)=>{this.props.handleSelectQuery(e)} }>
-                        <option default value="client">Client Caching</option>
-                        <option value="server">Server Caching</option>
+                        <option default value="server">Server Caching</option>
+                        <option value="client">Client Caching</option>
                         <option value="both">Cache in Both</option>
                     </select>
 
