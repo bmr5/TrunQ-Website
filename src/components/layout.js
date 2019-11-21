@@ -44,7 +44,7 @@ const Layout = ({ children, location }) => {
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
               { name: 'keywords', content: 'Trunq' },
               { name: "og:title", content: 'TrunQ'},
-              { name: "og:image", content: "../badimage"} 
+              { name: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} 
 
             ]}
           >
