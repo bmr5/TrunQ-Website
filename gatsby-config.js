@@ -10,7 +10,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'TrunQ',
-        short_name: 'starter',
+        short_name: 'TrunQ',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
