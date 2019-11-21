@@ -42,8 +42,9 @@ const Layout = ({ children, location }) => {
             title={data.site.siteMetadata.title}
             meta={[
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
-              { name: 'keywords', content: 'Trunq' },
+              { name: 'keywords', content: 'TrunQ' },
               { name: "og:title", content: 'TrunQ'},
+              { name: "og:description", content: 'Easy to Implement GraphQL Solution!'},
               { name: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} 
 
             ]}
