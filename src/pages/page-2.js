@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import socialbanner from '../images/trunqsocialbanner.png'
+import socialbanner from '../images/atrunqsocialbanner.png'
 
 import Layout from '../components/layout'
 
