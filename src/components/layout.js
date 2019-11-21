@@ -43,9 +43,9 @@ const Layout = ({ children, location }) => {
             meta={[
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
               { name: 'keywords', content: 'TrunQ' },
-              { name: "og:title", content: 'TrunQ'},
-              { name: "og:description", content: 'Easy to Implement GraphQL Solution!'},
-              { name: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} 
+              { property: "og:title", content: 'TrunQ'},
+              { property: "og:description", content: 'Easy to Implement GraphQL Solution!'},
+              { property: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} 
 
             ]}
           >
