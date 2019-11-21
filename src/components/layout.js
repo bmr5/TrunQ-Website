@@ -43,6 +43,9 @@ const Layout = ({ children, location }) => {
             meta={[
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
               { name: 'keywords', content: 'Trunq' },
+              { name: "og:title", content: 'Easy to Implement GraphQL Solution!'},
+              { name: "og:image", content: "../images/trunqsocialbanner.png"} 
+
             ]}
           >
             <html lang="en" />
