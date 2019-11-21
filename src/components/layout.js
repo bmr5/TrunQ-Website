@@ -42,10 +42,15 @@ const Layout = ({ children, location }) => {
             title={data.site.siteMetadata.title}
             meta={[
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
-              { name: 'keywords', content: 'Trunq' },
-              { name: "og:title", content: 'TrunQ'},
-              { name: "og:image", content: "../images/trunqsocialbanner.png"} 
-
+              { name: 'keywords', content: 'TrunQ' },
+              { property: "og:title", content: 'TrunQ'},
+              { property: "og:url", content: 'https://trunq.io/'},
+              { property: "og:description", content: 'Easy to Implement GraphQL Solution!'},
+              { property: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"},
+              { property: "twitter:card", content: "Summary"},
+              { property: "twitter:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"},
+              { property: "twitter:title", content: 'TrunQ'},
+              { property: "twitter:description", content: 'Easy to Implement GraphQL Solution!'}
             ]}
           >
             <html lang="en" />
