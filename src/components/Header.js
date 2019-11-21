@@ -21,6 +21,7 @@ const Header = (props) => (
                 <li><a href="javascript:;" onClick={() => {props.onOpenArticle('info')}}>Info</a></li>
                 <li><a href="javascript:;" onClick={() => {props.onOpenArticle('demo')}}>Demo</a></li>
                 <li><a href="javascript:;" onClick={() => {props.onOpenArticle('team')}}>Team</a></li>
+                <li><a href="https://github.com/oslabs-beta/trunQ">Github</a></li>
 
             </ul>
 
