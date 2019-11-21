@@ -39,8 +39,7 @@ const Info = (props) => (
           </p>
           <p>
             On the Demo tab you'll be able to see all of this in action. Feel free to check out our <a href='https://github.com/oslabs-beta/trunQ'>GitHub</a> or <a href='https://www.npmjs.com/package/trunq'>NPM package</a> for 
-            more in-depth information. Or shoot any of us an email on the Team tab and
-            we would be happy to talk with you.
+            more in-depth information. Or connect with any of us on the Team tab and we would be happy to talk with you.
           </p>
           {props.close}
         </article>

@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-dimension-v2",
-  "description": "Gatsby Starter - Dimension V2",
+  "name": "TrunQ",
+  "description": "Gatsby TrunQ",
   "version": "1.0.0",
   "author": "Ben Ray",
   "dependencies": {
@@ -30,6 +30,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/bmr5/TrunQ-Website"
   }
 }
