@@ -44,8 +44,10 @@ const Layout = ({ children, location }) => {
               { name: 'description', content: 'Easy to Implement GraphQL Solution!' },
               { name: 'keywords', content: 'TrunQ' },
               { property: "og:title", content: 'TrunQ'},
+              { property: "og:url", content: 'https://trunq.io/'},
               { property: "og:description", content: 'Easy to Implement GraphQL Solution!'},
-              { property: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} 
+              { property: "og:image", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"} ,
+              { property: "twitter:card", content: "https://github.com/oslabs-beta/TrunQ/raw/master/demo/assets/trunqsocialbanner.png"}
 
             ]}
           >
