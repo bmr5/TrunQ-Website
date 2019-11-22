@@ -18,10 +18,10 @@ const Info = (props) => (
       TrunQ is designed to give you the most flexible out-of-the-box caching solution
       for 3rd party APIs and remote servers. Employing both client-side and server-side caching,
       TrunQ gives you the option to decide what is most important for your application.
-          </p>
+    </p>
     <p>
       TrunQ's NPM packages (<a href="https://www.npmjs.com/package/trunq">client</a> and <a href="https://www.npmjs.com/package/trunq-server">server</a>) offer numerous features for developers including:
-          </p>
+    </p>
     <ul>
       <br />
 
@@ -43,13 +43,12 @@ const Info = (props) => (
           </p>
     <p>
       If you are interested in learning more about OS-Labs or other open-source GraphQL projects, please check out these links!
-
-            <ul>
+    </p>
+    <ul>
         <br />
         <li><a href="https://github.com/oslabs-beta">OSLabs-Beta</a></li>
         <li><a href="https://graphquill.com/">GraphQuill</a></li>
-      </ul>
-    </p>
+    </ul>
     {props.close}
   </article>
 )

@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
 import trunq from 'trunq'
+import BG from '../components/background.js'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -171,6 +172,7 @@ class IndexPage extends React.Component {
       times: [...this.state.times, elapsedTime]
     })
   }
+  
 
   render() {
 
@@ -194,7 +196,10 @@ class IndexPage extends React.Component {
             />
             <Footer timeout={this.state.timeout} />
           </div>
-          <div id="bg"></div>
+          <div id="bg">
+            <BG />
+          </div>
+
         </div>
         
       </Layout>

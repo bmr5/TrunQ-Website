@@ -18,6 +18,15 @@ module.exports = {
         icon: 'src/images/trunQiconblack512x512.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images`
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     'gatsby-plugin-sass',
     'gatsby-plugin-offline'
   ],

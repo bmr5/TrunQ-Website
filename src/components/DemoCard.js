@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const DemoCard = props => {
     let {name, artworks, hometown, years, birthday, nationality} = props.artist
     let hometownPara = hometown ? <p className='info'>Hometown: {hometown}</p> : ''
