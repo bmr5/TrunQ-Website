@@ -19,6 +19,7 @@ class Demo extends React.Component {
             >
 
                 <h2 className="major">demo</h2>
+                <p>Use the dropdown buttons under the query box to modify the query, and choose where the response will be cached. Then, click on the query to send a request to our server. Click a second time to show cached results! <a href='https://www.youtube.com/watch?v=GnlB7LpwijU'>Video Demonstration</a></p>
 
                 {/* put the dynamic query button here using this image as the background */}
                 <button className="image main" onClick={ ()=>this.props.handleFetch(this.props.query) }>
