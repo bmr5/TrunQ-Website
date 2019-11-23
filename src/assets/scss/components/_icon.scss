@@ -9,14 +9,20 @@
 	.icon {
 		@include icon;
 		border-bottom: none;
-		height: 42%;
+		height: 50%;
 		width: 60%;
-		margin-top: 1.5rem;
-		margin-left: 1.05rem;
+		margin-top: 25%;
 
 		> .label {
 			display: none;
 		}
+	}
+
+	.logo{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		
 	}
 
 	.logo-link {

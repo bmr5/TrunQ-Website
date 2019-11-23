@@ -24,9 +24,10 @@ const Header = (props) => {
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
             
-            <a className='logo-link' href="https://github.com/oslabs-beta/trunQ">
-                <Img className="icon" fluid={trunQicon.file.childImageSharp.fluid}/>    
-            </a>
+        <Img className="icon" fluid={trunQicon.file.childImageSharp.fluid}>
+            <a className='logo-link' href="https://github.com/oslabs-beta/trunQ"/>
+        </Img>
+            
             
         </div>
         <div className="content">
