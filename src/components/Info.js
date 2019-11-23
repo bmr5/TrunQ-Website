@@ -1,5 +1,4 @@
 import React from 'react'
-import maps from '../images/maps.jpg'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
 

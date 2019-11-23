@@ -1,13 +1,32 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 import trunQicon from '../images/trunQicon.png' 
 
 
-const Header = (props) => (
+const Header = (props) => {
+    
+    const trunQicon = useStaticQuery(graphql`
+  query {
+    file(name: {regex: "/trunQicon/"}) {
+      name
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+  `)
+
+    return(
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
             
-            <a className='logo-link' href="https://github.com/oslabs-beta/trunQ"><img className="icon" src={trunQicon} /></a>
+            <a className='logo-link' href="https://github.com/oslabs-beta/trunQ">
+                <Img className="icon" fluid={trunQicon.file.childImageSharp.fluid}/>    
+            </a>
             
         </div>
         <div className="content">
@@ -27,7 +46,7 @@ const Header = (props) => (
 
         </nav>
     </header>
-)
+)}
 
 Header.propTypes = {
     onOpenArticle: PropTypes.func,

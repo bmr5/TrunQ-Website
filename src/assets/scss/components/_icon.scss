@@ -9,9 +9,10 @@
 	.icon {
 		@include icon;
 		border-bottom: none;
-		position: relative;
 		height: 42%;
+		width: 60%;
 		margin-top: 1.5rem;
+		margin-left: 1.05rem;
 
 		> .label {
 			display: none;
