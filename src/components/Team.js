@@ -22,6 +22,8 @@ const Team = (props) => {
     }
   }
   `)
+  // console.log(teamImages.allFile.edges)
+  let orderedImages = teamImages.allFile.edges.sort((a,b) => a.name - b.name)
 
   return(
     <article
@@ -36,7 +38,7 @@ const Team = (props) => {
           <span className="portrait main">
             <div className="portrait bioleft">
 
-              <Img className='portrait bioleft image' fluid={teamImages.allFile.edges[0].node.childImageSharp.fluid}/>
+              <Img className='portrait bioleft image' fluid={orderedImages[0].node.childImageSharp.fluid}/>
             
               Ben Ray is a full-stack software engineer passionate about building performant React applications 
               people love to use. Prior to TrunQ, Ben was a CPA at Ernst & Young and now uses that analytical 
@@ -52,7 +54,7 @@ const Team = (props) => {
 
           <span className="portrait main">
             <div className="portrait bioright">
-              <Img className='portrait bioright image' fluid={teamImages.allFile.edges[1].node.childImageSharp.fluid}/>
+              <Img className='portrait bioright image' fluid={orderedImages[1].node.childImageSharp.fluid}/>
 
               Brian Haller is a full-stack Javascript engineer specializing in React and Express. 
               He is deeply passionate about optimization, especially concerning redundant data transferral over HTTP. 
@@ -67,7 +69,7 @@ const Team = (props) => {
 
           <span className="portrait main">
             <div className="portrait bioleft">
-             <Img className='portrait bioleft image' fluid={teamImages.allFile.edges[2].node.childImageSharp.fluid}/>
+             <Img className='portrait bioleft image' fluid={orderedImages[2].node.childImageSharp.fluid}/>
 
               Gordon Campbell is a full-stack Javascript engineer and is focused on designing and implementing modular full-stack applications through OOP. 
               Fluent in React, Node.js, and SQL, his interests lie in streaming and data transferral protocols. 
@@ -81,7 +83,7 @@ const Team = (props) => {
 
           <span className="portrait main">
             <div className="portrait bioright">
-              <Img className='portrait bioright image' fluid={teamImages.allFile.edges[3].node.childImageSharp.fluid}/>
+              <Img className='portrait bioright image' fluid={orderedImages[3].node.childImageSharp.fluid}/>
 
               Michael Evans is a software engineer focused on developing full stack applications. Prior to TrunQ, 
               Michael was an analyst in the Private Equity Group at Goldman Sachs where he focused on transitioning 
