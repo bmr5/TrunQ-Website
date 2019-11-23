@@ -28,7 +28,7 @@ const Team = (props) => {
     if(a.node.name > b.node.name) { return 1; }
     return 0;
   })
-  console.log(orderedImages)
+
   return(
     <article
           id="team"
