@@ -2,14 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
 import Img from 'gatsby-image'
-import trunQicon from '../images/trunQicon.png' 
 
 
 const Header = (props) => {
     
     const trunQicon = useStaticQuery(graphql`
   query {
-    file(name: {regex: "/trunQicon/"}) {
+    file(name: {regex: "/trunQiconwhite/"}) {
       name
       childImageSharp {
         fluid {
