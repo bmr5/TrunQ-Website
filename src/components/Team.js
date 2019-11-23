@@ -22,9 +22,13 @@ const Team = (props) => {
     }
   }
   `)
-  // console.log(teamImages.allFile.edges)
-  let orderedImages = teamImages.allFile.edges.sort((a,b) => a.name - b.name)
 
+  let orderedImages = teamImages.allFile.edges.sort((a,b) => {
+    if(a.node.name < b.node.name) { return -1; }
+    if(a.node.name > b.node.name) { return 1; }
+    return 0;
+  })
+  console.log(orderedImages)
   return(
     <article
           id="team"
