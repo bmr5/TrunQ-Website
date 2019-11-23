@@ -1,8 +1,25 @@
 import React from 'react'
 import maps from '../images/maps.jpg'
+import { useStaticQuery, graphql } from "gatsby"
+import Img from 'gatsby-image'
 
 
-const Info = (props) => (
+const Info = (props) => {
+  
+  const mapImage = useStaticQuery(graphql`
+  query {
+    file(name: {regex: "/map/"}) {
+      name
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+  `)
+
+  return (
   <article
     id="info"
     className={`${props.article === 'info' ? 'active' : ''} ${
@@ -12,7 +29,7 @@ const Info = (props) => (
   >
     <h2 className="major">Info</h2>
     <span className="image main">
-      <img src={maps} alt="" />
+      <Img fluid={mapImage.file.childImageSharp.fluid}/>
     </span>
     <p>
       TrunQ is designed to give you the most flexible out-of-the-box caching solution
@@ -51,7 +68,7 @@ const Info = (props) => (
     </ul>
     {props.close}
   </article>
-)
+)}
 
 
 export default Info

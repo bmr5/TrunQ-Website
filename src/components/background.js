@@ -20,10 +20,10 @@ export default () => {
     let image = data.file.childImageSharp.fluid
     
     const imgStyle = {
-        "background-position": "center",
-        "background-size": "cover",
-        "background-repeat": "no-repeat",
-        "z-index": 1,
+        "backgroundPosition": "center",
+        "backgroundSize": "cover",
+        "backgroundRepeat": "no-repeat",
+        "zIndex": 1,
         "transform": "scale(1.125)",
         "height": "100%"
     }

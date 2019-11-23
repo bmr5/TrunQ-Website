@@ -1,11 +1,29 @@
 import React from 'react'
-import ben from '../images/ben.jpg'
-import brian from '../images/brian.jpg'
-import gordon from '../images/gordon.jpg'
-import michael from '../images/michael.jpg'
+
+import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from "gatsby"
 
 
-const Team = (props) => (
+const Team = (props) => {
+  
+  const teamImages = useStaticQuery(graphql`
+  query {
+    allFile(filter: {dir: {regex: "/team/"}}) {
+      edges {
+        node {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+          name
+        }
+      }
+    }
+  }
+  `)
+
+  return(
     <article
           id="team"
           className={`${props.article === 'team' ? 'active' : ''} ${
@@ -17,7 +35,9 @@ const Team = (props) => (
           
           <span className="portrait main">
             <div className="portrait bioleft">
-            <img className='portrait image left' src={ben} alt="" />
+
+              <Img className='portrait bioleft image' fluid={teamImages.allFile.edges[0].node.childImageSharp.fluid}/>
+            
               Ben Ray is a full-stack software engineer passionate about building performant React applications 
               people love to use. Prior to TrunQ, Ben was a CPA at Ernst & Young and now uses that analytical 
               training to architect complex full-stack applications. He loves to talk about front-end optimization 
@@ -32,7 +52,8 @@ const Team = (props) => (
 
           <span className="portrait main">
             <div className="portrait bioright">
-              <img className='portrait image right' src={brian} alt="" />
+              <Img className='portrait bioright image' fluid={teamImages.allFile.edges[1].node.childImageSharp.fluid}/>
+
               Brian Haller is a full-stack Javascript engineer specializing in React and Express. 
               He is deeply passionate about optimization, especially concerning redundant data transferral over HTTP. 
               Other areas of tech interest are security, user data privacy, and digital signal processing. 
@@ -46,7 +67,8 @@ const Team = (props) => (
 
           <span className="portrait main">
             <div className="portrait bioleft">
-            <img className='portrait image left' src={gordon} alt="" />
+             <Img className='portrait bioleft image' fluid={teamImages.allFile.edges[2].node.childImageSharp.fluid}/>
+
               Gordon Campbell is a full-stack Javascript engineer and is focused on designing and implementing modular full-stack applications through OOP. 
               Fluent in React, Node.js, and SQL, his interests lie in streaming and data transferral protocols. 
               <br/>
@@ -59,7 +81,7 @@ const Team = (props) => (
 
           <span className="portrait main">
             <div className="portrait bioright">
-              <img className='portrait image right' src={michael} alt="" />
+              <Img className='portrait bioright image' fluid={teamImages.allFile.edges[3].node.childImageSharp.fluid}/>
 
               Michael Evans is a software engineer focused on developing full stack applications. Prior to TrunQ, 
               Michael was an analyst in the Private Equity Group at Goldman Sachs where he focused on transitioning 
@@ -76,5 +98,5 @@ const Team = (props) => (
           {props.close}
     </article>
 )
-
+}
 export default Team

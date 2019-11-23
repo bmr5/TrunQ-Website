@@ -84,7 +84,8 @@
     &.bioleft {
         width:100%;
 
-        img {
+        .image {
+            width: 25%;
             float: left;
             margin-right: 1em;
         }
@@ -98,8 +99,10 @@
         width:100%;
         text-align: left;
 
-        img {
+        .image {
+            width: 25%;
             float: right;
+            margin-left: 1em;
         }
         &:before {
             color: lightgrey;   
