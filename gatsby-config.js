@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "TrunQ",
-    author: "Ben Ray",
-    description: "TrunQ IO Home Website"
+    title: 'TrunQ',
+    author: 'Ben Ray',
+    description: 'TrunQ,io Home Website',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -22,12 +22,12 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
   ],
 }
